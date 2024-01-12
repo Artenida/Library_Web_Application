@@ -1,0 +1,140 @@
+#login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-form{
+    margin: 20% 0;
+    background-color: aliceblue;
+}
+.form-control {
+    width: 100%;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 0.5 opacity */
+    z-index: 1;
+}
+
+.login_part_text_iner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.login_part_text_iner h2,
+.login_part_text_iner p,
+.login_part_text_iner a {
+    color: white; /* Set text color to white */
+}
+
+.signUp-button{
+    background-color: rgb(11, 125, 125); 
+    border-color: rgb(11, 125, 125);
+    padding: 3% 10%;
+    border-radius: 15px;
+    text-decoration: none;
+}
+.form-label {
+    color: black;
+    font-size: 12px;
+}
+.inner-form {
+    padding: 9%;
+}
+.forgot {
+    padding-top: 2%;
+    /* padding-left: 50%; */
+}
+.forgot a{
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+}
+.forgot a:hover{
+    text-decoration: underline;
+}
+@media (max-width: 991px) {
+    .form-class{
+        padding-top: 8%;
+    }
+
+    .form-class-signUp {
+        padding-bottom: 8%;
+        padding-top: 30%;
+    }
+    .row>* {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+        margin-top: var(--bs-gutter-y);
+    }
+}
+@media (max-width: 380px){
+    #login {
+        height: 100vh;
+    }
+    
+    .login_part_text_iner h2, .login_part_text_iner p, .login_part_text_iner a {
+        font-size: 11px;
+    }
+}
+@media (max-width: 430px){
+    #login {
+        height: 100vh;
+        padding-top: 20%;
+    }
+}
+
+
+.forgot-password {
+    background: url(../images/donate1.jpg);
+    height: 50vh;
+    box-shadow: 0 0 10px 10px black;
+}
+.forgot-password {
+    position: relative;
+    background: url(../images/donate1.jpg) center/cover;
+    height: 50vh;
+    padding: 20% 30%;
+}
+
+.forgot-password::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha (fourth value) for transparency */
+}
+
+
+.forgot {
+    background-color: aliceblue;
+    z-index: 1;
+}
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.inner-form input {
+    width: 100%;
+}

@@ -1,0 +1,66 @@
+.categories {
+    margin-top: 4%;
+}
+
+#categories {
+    background-image: url('../images/categories.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#romance,
+#komedi,
+#thriller,
+#aksion,
+#BestSeller,
+#historik,
+#mister,
+#fantazi
+ {
+    width: 350px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    margin-right: 10px;
+}
+
+#thriller {
+    background-image: url('../images/thriller.jpg');
+}
+
+#aksion {
+    background-image: url('../images/aksion.webp'); /* Use a different image for komedi */
+}
+
+#BestSeller {
+    background-image: url('../images/BestSeller.jpg');
+}
+
+#romance {
+    background-image: url('../images/romance.webp');
+}
+
+#komedi {
+    background-image: url('../images/komedi.jpg');
+}
+
+#historik {
+    background-image: url('../images/historik.jpg');
+}
+
+#mister {
+    background-image: url('../images/mister.jpg');
+}
+
+#fantazi {
+    background-image: url('../images/fantazi.png');
+}
+.liber {
+    max-width: 800px; /* Adjust the value based on your preference */
+    margin: 0 auto;   /* Center the content */
+    padding: 10px;    /* Add some padding for better readability */
+}

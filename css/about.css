@@ -1,0 +1,47 @@
+.about-page {
+    background: url(../images/about.jpg) rgba(0,0,0,0.6);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+.about-page p{
+    color: white;
+}
+.about-page-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* padding: 9% 6%; */
+    padding-top: 10%;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+.about-page-text p {
+    font-size: 18px;
+}
+.about-page-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
+}
+.about-page-button button {
+    padding: 0.5% 4%;
+    background-color: rgb(11, 125, 125);
+    color: white;
+    border: none;
+    transition: transform 0.3s ease-in-out;
+}
+.about-page-button button:hover {
+    transform: scale(1.1);
+}
+.about-page-text h2{
+    color: white;
+}
+
+
+/* Services section */

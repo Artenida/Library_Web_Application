@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Marcellus', sans-serif;
+}
+.d-flex a{
+    transition: transform 0.3s ease-in-out;
+}
+.d-flex a:hover{
+    transform: scale(1.1);
+}
+.fa-solid {
+    color: rgb(11, 125, 125);
+}
+
+.fa-solid:hover {
+   opacity: 0.7; 
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity (0.6) as per your preference */
+    transition: background-color 0.3s ease-in-out;
+    /* margin-right: 12px; */
+}
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    padding: 0 4%;
+}
+
+.nav-links ul li a ,.sign a{
+	color: #ffffff;
+	/** #ffffff ngjyra e bardhe e menuve*/
+	text-decoration: none;
+	font-size: 14px;
+}
+
+/*.sign a{
+	color: #ffffff;
+	text-decoration: none; *heq nenvizimin e link-ut*
+	font-size: 14px;
+}*/
+
+.nav-links ul li::after, .sign a::after{
+	/**kjo ben vizat e kuqe poshte menuve */
+	content: '';
+	width: 0%; /**nga 100% e beme 0% ne menyre qe vija e kuqe te jete e fshehur */
+	height: 2px;
+	background: #f44336;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+
+.nav-links ul li:hover::after, .sign a:hover::after{
+	width: 100%;
+}
+
+
+.nav-links ul li a.active::after{
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #f44336;
+	display: block;
+	margin: auto;
+}
+
+ 
+.home {
+    background: url(../images/home-page4.webp) rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.6);
+
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    height: 100vh !important;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin-top: 10%; */
+    padding-top: 15%;
+}
+.home h2{
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 5px;
+    font-size: 50px;
+}
+.home h5{
+    font-size: 15px;
+    color: white;
+    padding-bottom: 12px;
+}
+.form-control {
+    width: 280px;
+    height: 35px;
+}
+.btn-outline-success {
+    height: 30px;
+}
+
+
+/* Start services */
+.services {
+    margin-top: 4%;
+    /* margin-bottom: 4%; */
+}
+.fa-brands {
+    color: black;
+}
+.card-title {
+    color: black;
+    font-size: 20px;
+}
+.lead {
+    font-size: 16px;
+    font-weight: 300;
+    color: black;
+}
+/* End services */
+
+
+/* Start about */
+.about {
+    background: url(../images/about.jpg) rgba(0,0,0,0.5);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    margin-top: 2%;
+    padding-bottom: 4%;
+    background-repeat: no-repeat;
+}
+.about p{
+    color: white;
+}
+.about-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* padding: 9% 6%; */
+    padding-top: 5%;
+    padding-bottom: 2%;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.about-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
+}
+.about-button button {
+    padding: 0.5% 4%;
+    background-color: rgb(11, 125, 125);
+    color: white;
+    border: none;
+    transition: transform 0.3s ease-in-out;
+
+}
+.about-button button:hover {
+    transform: scale(1.1);
+}
+.about-text h2{
+    color: white;
+}
+/* End about */
+
+
+/* Start donate */
+/* #donate {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 2%
+} */
+#donate button {
+        padding: 1% 7%;
+        background-color: rgb(11, 125, 125);
+        color: white;
+        border: none;
+        transition: transform 0.3s ease-in-out;
+        margin-left: 40%;
+}
+#donate button:hover {
+    transform: scale(1.1);
+}
+.donate-text p{
+    color: black;
+}
+/* End donate  */
+
+
+/* Start staff */
+.staf {
+    background: url(../images/home-page3.webp) rgba(0,0,0,0.5);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    margin-top: 2%;
+    padding: 4% 0;
+    background-repeat: no-repeat;
+}
+.staff .img-fluid {
+    width: 100px;
+    height: 100px;
+}
+.staf .col-12 {
+    width: 285px;
+}
+.staf .section-header h2,p{
+    color: white;
+}
+
+/* End staff  */
+
+.error {
+    color: red;
+}
+
+footer p, 
+footer a {
+    font-size: 13px;
+    color: black;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        background-color: rgba(90, 89, 89, 0.749);
+        backdrop-filter: blur(5px);
+    }
+
+    .main {
+        padding: 35% 15%;
+    }
+
+}
+
+
+@media (max-width: 1025px) {
+   
+    .main {
+        padding: 30% 15%;
+    }
+
+}
+
+@media (max-width: 1180px) {
+   
+    .main {
+        padding: 30% 15%;
+    }
+
+}
+
+@media (max-width: 430px) {
+     .main {
+        padding: 60% 15%;
+    }
+
+    .home h2{
+        font-size: 25px;
+    }
+    .home h5{
+        font-size: 15px;
+        padding-bottom: 6%;
+    }
+    .form-control {
+        width: 180px;
+
+    }
+}
+

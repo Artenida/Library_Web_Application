@@ -8,12 +8,24 @@
     <meta charset="utf-8">
     <title>Donation Report</title>
     <style type = "text/css">
-        body{
-            font-family:sans-serif;
-            background-color: rgb(11, 125, 125);
-            height: 100vh;
-            /* background-repeat: no-repeat; */
-        }
+      body {
+    font-family: sans-serif;
+    height: 100vh;
+    background: url(images/White\ Library.jpg) center/cover no-repeat fixed;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
         table{
             margin: 0 auto;
             margin-top: 100px;
@@ -26,19 +38,24 @@
         }
         th,
         td {
-            font-weight: bold;
-            border: 1px solid black;
+            /* font-weight: bold; */
+            /* border: 1px solid black; */
             padding: 10px;
             text-align: center;
         }
-        tr:nth-child(odd){
-            background-color: #f5ebe0;
+        /* tr:nth-child(odd) {
+            background-color: aliceblue;
+        } */
+
+        tr:hover {
+            background-color: gainsboro; /* Change the color as needed */
         }
         caption{
             width: 700px;
             margin:auto;
-            color:#343a40;
+            color: white;
             padding: 15px 0px;
+            font-weight: bold;
             text-align:center;
             border-radius:15px 15px 0px 0px;
             font-size:28px;
@@ -52,7 +69,7 @@
 }
 
 .nav-links  a{
-    color: black;
+    color: white;
     font-weight: bold;
     /** #ffffff ngjyra e bardhe e menuve*/
     text-decoration: none;
@@ -64,7 +81,7 @@
     content: '';
             width: 0%;
             height: 2px;
-            background: #ffffff; /* Set the hover effect color to white */
+            background: red; 
             display: block;
             margin: auto;
             transition: 0.5s;
@@ -86,17 +103,20 @@
     <div class = "nav-links"  id="navLinks">
         <p><a href = "admin_main_page.php">ADMIN</a></p>
     </div>
-    <table>
+
+    <table class="table-hover">
         <caption >Tabela e donacioneve:</caption>
-        <tr>
-            <th>Id</th>
-            <th>Emri</th>
-            <th>Mbiemri</th>
-            <th>Email</th>
-            <th>Nr.telefoni</th>
-            <th>Shuma</th>
-        </tr>
-    <?php
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Emri</th>
+      <th scope="col">Mbiemri</th>
+      <th scope="col">Email</th>
+      <th scope="col">Nr. Telefoni</th>
+      <th scope="col">Shuma</th>
+    </tr>
+  </thead>
+  <?php
         while($row = mysqli_fetch_row($result)){
             echo("<tr>");
             foreach($row as $value)
@@ -104,9 +124,8 @@
             echo("</tr>");
         }
     ?>
-    </table>
-    </table>
-
+  </tbody>
+</table>
 
 </body>
 </html>

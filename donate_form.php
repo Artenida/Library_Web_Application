@@ -8,7 +8,8 @@
     
     // $leke = $_POST['total'];
 	// $k_name = $_POST['k_name'];
-	$k_lastname = $_POST['k_lastname'];
+	// $k_lastname = $_POST['k_lastname'];
+    $leke = $_POST['total'];
 	$k_nr = $_POST['k_nr'];
 	$k_kodi = $_POST['k_kodi'];
 	$k_exc = $_POST['k_exc'];

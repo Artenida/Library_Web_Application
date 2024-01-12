@@ -41,19 +41,47 @@ if (isset($_POST['addBook'])) {
 		</p> -->
 <style>
     .container {
-        padding: 4% 5%;
-        margin: 5%;
+        padding: 4% 6%;
+        margin-top: 10%;
     }
 
+    /* .nav-links {
+  padding-left: 90%;
+} */
+.nav-links  a{
+    color: white;
+    font-weight: bold;
+    /** #ffffff ngjyra e bardhe e menuve*/
+    text-decoration: none;
+    font-size: 13px;
+}
+/** efektet kur klikojme dhe viza e kuqe **/
+.nav-links a::after{
+    /**kjo ben vizat e kuqe poshte menuve */
+    content: '';
+            width: 0%;
+            height: 2px;
+            background: red; 
+            display: block;
+            transition: 0.5s;
+        }
+
+        .nav-links a:hover::after {
+            width: 8%}
 </style>
 
 
-<section class="container bg-dark text-light ">
-<form action="#" method="post" class="row g-3" novalidate>
+<section>
+<div class="container bg-dark text-light" style="width: 50%;">
+    <div class="row d-flex justify-content-center align-items-center">
+    <form action="#" method="post" class="row g-3 " novalidate>
   <h3>Shto nje kategori librash ne biblioteke</h3>
-     <a href="admin_main_page.php"><button type="button" class="btn-close" aria-label="Close"></button></a>
+     <!-- <a href="admin_main_page.php"><button type="button" class="btn-close" aria-label="Close"></button></a> -->
+     <div class = "nav-links"  id="navLinks">
+        <p><a href = "admin_main_page.php">Admin</a></p>
+    </div>
 
-  <div class="col-md-4">
+  <div class="col-md-10">
     <label for="validationCustom01" class="form-label">Kategoria</label>
     <input type="text" class="form-control" id="validationCustom01" name="category" required>
   </div>
@@ -64,7 +92,8 @@ if (isset($_POST['addBook'])) {
   
   <p><?php  echo $mesazh ?></p>
 </form>
-
+    </div>
+    </div>
 </section>
 
 </body>

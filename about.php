@@ -57,7 +57,7 @@ session_start();
                             Synojme qe t'i ofrojmë përdoruesve një gamë të gjerë të kulturës, ndjenjave dhe emocioneve përmes burimeve të ndryshme,
                             duke u siguruar që kykoleksion të jetë i rregulluar dhe aktualizuar në mënyrë që të përgjigjet nevojave dhe interesave të komunitetit.
                             </p>
-                            <a href="about.php"><button class="btn text-light" style="background-color: rgb(11, 125, 125);">Read More</button></a>
+                            <!-- <a href="about.php"><button class="btn text-light" style="background-color: rgb(11, 125, 125);">Read More</button></a> -->
                         </div>
                     </div>
                 </div><div class="col-12 col-md-12 col-lg-4 mb-4">
@@ -70,7 +70,7 @@ session_start();
                                 nga te gjitha fushat, ato jane gjithmone te gatshem t'iu afrojne sa me afer botes se librave, sa me afer emocioneve te cilat keni 
                                 nevoje te perjetoni.
                             </p>
-                            <a href="about.php"><button class="btn text-light" style="background-color: rgb(11, 125, 125);">Read More</button></a>
+                            <!-- <a href="about.php"><button class="btn text-light" style="background-color: rgb(11, 125, 125);">Read More</button></a> -->
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ session_start();
                             Përdoruesit do të kenë mundësi të zgjedhin nga një gamë e gjerë e librave dhe të eksplorojnë lloje të ndryshme të letërsisë.
                             Kjo ndihmon në rritjen e numrit të librave të huazuar, duke ndikuar në një eksperiencë më të pasur për përdoruesit.
                             </p>
-                            <a href="about.php"><button class="btn text-light" style="background-color: rgb(11, 125, 125);">Read More</button></a>                        </div>
+                            <!-- <a href="about.php"><button class="btn text-light" style="background-color: rgb(11, 125, 125);">Read More</button></a>                        </div> -->
                     </div>
                 </div>
             </div>

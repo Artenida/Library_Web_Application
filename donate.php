@@ -15,6 +15,11 @@ require_once "includes/top-menu.php";
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/donate.css">
 
+<style>
+    span {
+        font-size: 10px;
+    }
+</style>
 
 <body>		
     <section class="donator">
@@ -35,7 +40,7 @@ require_once "includes/top-menu.php";
 
                         <div class="mb-3">
                             <label for="description" class="form-label">Mbiemri:</label>
-                            <input class = "form-control" type = "text" name="lastname" value="<?php echo $lastname ?>"/>
+                            <input class = "form-control" type = "text" name="lastname" value="<?php echo $lastname ?>" required/>
                         </div>
 
                         <div class="mb-3">
@@ -49,31 +54,26 @@ require_once "includes/top-menu.php";
                         </div>
 
                         <div class="mb-3">
-                            <label for="description" class="form-label">Shuma e dhurimit:</label>
-                            <input class = "form-control" type = "number" placeholder="Leke" name="total"/>
-                        </div>
-                        
-                        <!-- <div class="mb-3">
-                            <label for="name" class="form-label">Emri:</label>
-                            <input type="text" class="form-control" name="k_name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="lastname" class="form-label">Mbiemri:</label>
-                            <input type="text" class="form-control" name="k_lastname" required>
-                        </div> -->
-                        <div class="mb-3">
-                            <label for="karte" class="form-label">Numri i kartes:</label>
-                            <input type="text" class="form-control" id="k_nr" name="k_nr" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="siguri" class="form-label">Kodi i sigurise:</label>
-                            <input type="text" class="form-control" id="k_kodi" name="k_kodi" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Mbarimi i vlefshmerise se kartes:</label>
-                            <input type="text" class="form-control" id="k_exc" type="date" name="k_exc" >
+                            <label for="description" class="form-label">Titulli i librit:</label>
+                            <input class = "form-control" type = "text" id="title" name="title" required/>
                         </div>
 
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Autori:</label>
+                            <input class = "form-control" type = "text" id="author" name="author" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Kategoria se ciles i perket:</label>
+                            <input class = "form-control" type = "text" id="category" name="category" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Caktoni daten per takim:</label>
+                            <input class="form-control" id="date" type="text" name="date" >
+                            <span>Note: Data duhet te jete viti.muaji.dita</span>
+                        </div>
+                        
                         <div class="mb-3 text-center">
                             <button type="submit" class="btn btn-primary" name="submit"
 							style="background-color: rgb(11, 125, 125);

@@ -21,10 +21,9 @@ require_once "includes/top-menu.php";
         <ul>
         <?php
             require ("lidhja.php");
-            if($search == "special")
-                $sql = "SELECT id, emri, rraca, foto FROM kafshet WHERE special = 1";
-            else
-                $sql = "SELECT id, emri, rraca, foto FROM kafshet WHERE lloji = '$search' OR emri = '$search' OR mosha = '$search' OR ngjyra = '$search' OR rraca = '$search' OR gjinia = '$search'";
+                $sql = "SELECT librat.ID_Lib, librat.Titulli, librat.Cmimi, autoret.Emri, autoret.Mbiemri
+                FROM librat, autoret, kategorite
+                WHERE librat.Titulli = '$search' OR librat.Cmimi = '$search' OR  kategorite.Kategoria= '$search' OR autoret.Emri = '$search' OR autoret.Mbiemri = '$search'";
             if(!($rez = mysqli_query($conn, $sql)))
                 die("Nuk u realizua kerkesa");
             $variablat = "";

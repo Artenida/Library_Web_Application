@@ -17,16 +17,16 @@
                     <h5 class="text-uppercase font-weight-bold" style="color: rgb(11, 125, 125);">Kategorite</h5>
                     <br class="mb-4">
                     <p>
-                        <a href="../category.php" class="text-dark" style="text-decoration: none;">Romance</a>
+                        <a href="specific_category.php?catName=Romance" class="text-dark" style="text-decoration: none;">Romance</a>
                     </p> 
                     <p>
-                        <a href="../category.php" class="text-dark" style="text-decoration: none;">Thriller</a>
+                        <a href="specific_category.php?catName=Thriller" class="text-dark" style="text-decoration: none;">Thriller</a>
                     </p> 
                     <p>
-                        <a href="../category.php" class="text-dark" style="text-decoration: none;">Historik</a>
+                        <a href="specific_category.php?catName=Historik" class="text-dark" style="text-decoration: none;">Historik</a>
                     </p> 
                     <p>
-                        <a href="../category.php" class="text-dark" style="text-decoration: none;">Mister</a>
+                        <a href="specific_category.php?catName=Mister" class="text-dark" style="text-decoration: none;">Mister</a>
                     </p> 
                 </div>
 

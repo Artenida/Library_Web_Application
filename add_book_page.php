@@ -18,11 +18,13 @@ if (isset($_POST['addBook'])) {
         $mesazh = "Ju lutem plotësoni të gjitha fushat e detyrueshme.";
     } else {
 
-        $checkSql = "SELECT * FROM lib_pershkrim WHERE `Titulli` = '$title' AND `Pershkrimi` = '$description'";
+        $checkSql = "SELECT * FROM librat
+         WHERE `Titulli` = '$title' AND `Pershkrimi` = '$description'";
         $checkResult = mysqli_query($conn, $checkSql);
 
         if (mysqli_num_rows($checkResult) > 0) {
-            $updateSql = "UPDATE lib_pershkrim SET `Sasia` = `Sasia` + $quantity WHERE `Titulli` = '$title' AND `Pershkrimi` = '$description'";
+            $updateSql = "UPDATE librat
+             SET `Sasia` = `Sasia` + $quantity WHERE `Titulli` = '$title' AND `Pershkrimi` = '$description'";
             $updateResult = mysqli_query($conn, $updateSql);
             if ($updateResult) {
                 $mesazh = "Sasia e librave është përditësuar në db.";
@@ -30,7 +32,8 @@ if (isset($_POST['addBook'])) {
                 $mesazh = "Gabim gjatë përditësimit.";
             }
         } else {
-            $sql = "INSERT INTO lib_pershkrim (`Titulli`, `Pershkrimi`, `Cmimi`, `Nr_Faqeve`, `Sasia`) 
+            $sql = "INSERT INTO librat
+             (`Titulli`, `Pershkrimi`, `Cmimi`, `Nr_Faqeve`, `Sasia`) 
                     VALUES ('$title', '$description', '$price', '$pages','$quantity') ";
 
             $result = mysqli_query($conn, $sql);

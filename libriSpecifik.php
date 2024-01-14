@@ -1,96 +1,57 @@
-<?php
-    require ("lidhja.php");
-    session_start();
-    $vlere = $_SESSION['vlera'];
-?>
-
 <html>
-    <head>
-        <title>Pet Adoption</title>
-        <link rel="stylesheet" type="text/css" href="spf_pet.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
-        <script src="contact.js"></script>
-    </head>
-    <body>
-        <section>
-        <div class="menu">
-                <div class = "nav-links">
-                    <ul>
-                        <li><a href="home.php">HOME</a></li>
-                        <li><a class="active" href="category.php">CATEGORIES</a></li>
-                        <li><a href="#contact" onclick="myFunction()">CONTACT</a></li>
-                        <li><a href="about.php">ABOUT</a></li>
-                        <?php if(!empty($_SESSION['iLoguar']) && $_SESSION['roli'] == "admin") echo "<li><a href='admin_main_page.php'>ADMIN</a></li>" ?>
-                    </ul>
-                </div>
+<?php session_start(); ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <div class="right-side">
-                    <form action="#" method="post">
-                        <ul>
-                            <li><div class = 'sign'>
-                         <?php
-                            if(!empty($_SESSION['iLoguar']))
-                                echo "<a href='signOut.php' >SIGN OUT</a>";
-                            else
-//                                echo "<input type='submit' name='signIn' id='signIn' value='Sign In'>";
-                                echo "<a href='login_web.php' >SIGN IN</a>";
-                          ?>
-                            </div></li>
-                            <li><div class = "searchElements">
-                                <input type="text" id = "search" name="search" placeholder="Search">
-                                <button type="submit" name="kerkim" id = "search-icon"><img src="search.webp" style="width: 20px; height: 20px"></button>
-                            </div></li>
-                        </ul>
-                         
-                    
-        </div>
-    </div> 
-    </section>
-    <div class = "pet">
-        <?php
-        $sql = "SELECT * FROM kafshet WHERE id = $vlere";
-        if(!($rez = mysqli_query($conn, $sql)))
-            die("Nuk u realizua kerkesa");
-        while($rresht = mysqli_fetch_row($rez)) {
-            if($rresht[8] == 1)
-                $var = "Eshte special";
-            else
-                $var = "Nuk eshte special";
-//            $rresht[9] = 'data:image/;base64,' . base64_encode($rresht[9]);
-            echo "<div class = 'pet-col'>
-            <img src='$rresht[9]' alt='Image' style='width: 500px; height: 500px'>
-            <div>
-            <br><b>Emri:</b> $rresht[1]<br> 
-            <p> <b>Mosha:</b> $rresht[2]<br>
-            <b>Lloji:</b> $rresht[3] <br> 
-            <b>Ngjyra:</b> $rresht[4]<br>
-            <b>Rraca:</b> $rresht[5]<br>
-            <b>Gjinia:</b> $rresht[6]<br>
-            <b>Pershkrimi:</b> $rresht[7]<br>
-            <b>Special:</b> $var</p>
-            </button></div>";
-            echo '</div>';
-        }
-        ?>
-        <input type="submit" id = "adopt" name="adopto" value="Adopto">
-        </form>
-        </div>
-    </body>
-</html> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto+Slab:wght@300&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/category.css">
+    
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
 
 <?php
-    if(isset($_POST['adopto']))
-        if(!empty($_SESSION['iLoguar']))
-        header("Location: adoptimi.php");
-    else
-        header("Location: login_web.php");
-
-    if(isset($_POST['kerkim'])) {
-        $_SESSION['search'] = $_POST['search'];
-        header("Location: search.php");
-    }
-    else
-        $_SESSION['search'] = "";
+    require_once "includes/header.php";
+    require_once "includes/top-menu.php";
+    include 'lidhja.php';
 ?>
+<body>
+<?php
+if(isset($_GET['id']))
+{
+	$id = $_GET['id'];
+	$sql = "SELECT librat.*, autoret.*, libra_autor.*
+			FROM librat, autoret, libra_autor
+			WHERE librat.ID_Lib = $id AND librat.ID_Lib=libra_autor.ID_Lib AND autoret.ID_Autor=libra_autor.ID_Autor;";
+	$result = mysqli_query($conn, $sql);
+}
+?>
+	<div>	
+	<?php
+
+		$row = mysqli_fetch_array($result);
+		
+		print "<div class='container' style='padding-top: 4%;'><div class='row'><div class='col-md-12'><div class='titulli'>" . $row['Titulli'] . "</div>";
+		print "<div class='cover'> <img alt='" . $row['Titulli'] . "' src='images/librat/" . $row['Titulli'] . ".jpg'/></div>";
+		print "<div class='info'><b>Autori:</b>" . $row['Emri'] . " " . $row['Mbiemri'] . "<br/>";
+		print "<b>Cmimi:</b> " .$row['Cmimi'];
+		print "<br/><b>Numri i faqeve:</b> " . $row['Nr_Faqeve'] . "</div>";
+		print "<a href='Shporta.php?addID=" . $row['ID_Lib'] . "'><p class='shto'>Shto ne shporte</p></a>";
+		print "<div class='pershkrim'>" . $row['Pershkrimi'];
+		print "</div></div></div></div>";
+		$conn->close();
+	?>
+    </div>
+	
+	<?php require_once "includes/footer.php"; ?>
+    
+	</body>
+</html>

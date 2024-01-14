@@ -11,7 +11,7 @@ if (isset($_POST['addBook'])) {
     if (empty($category)) {
         $mesazh = "Ju lutem plotësoni fushat.";
     } else {
-        $checkSql = "SELECT * FROM lib_kat WHERE `Kategoria` = '$category'";
+        $checkSql = "SELECT * FROM kategorite WHERE `Kategoria` = '$category'";
         $checkResult = mysqli_query($conn, $checkSql);
 
         if (mysqli_num_rows($checkResult) > 0) {

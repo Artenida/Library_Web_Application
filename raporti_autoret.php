@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Donation Report</title>
+    <title>Author Report</title>
     <style type = "text/css">
       body {
     font-family: sans-serif;
@@ -89,6 +89,36 @@ body::before {
 
         .nav-links a:hover::after {
             width: 100%}
+
+            /** style-izimi per ankorin si button **/
+.butonat li a{
+	/* background-color: aliceblue; */
+	/* display: inline-block; */
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #fff;
+	padding: 12px 40px;
+	font-size: 13px;
+	background: transparent;
+	position: relative;
+	cursor: pointer;
+	width: 150px;
+}
+
+.butonat  li{
+	/* padding: 5% 50%; */
+    margin: 3% 43%; 
+    text-decoration: none;
+}
+
+.butonat li a:hover{
+	/* border: 1px solid #f44336; */
+	/* background: #f44336;*ngjyre si e kuqe , do duhet ta ndryshoje * */
+	border: 1px solid rgb(11, 125, 125);
+	background: rgb(11, 125, 125);/**ngjyre si e kuqe , do duhet ta ndryshoje **/
+	transition: 0.5s;
+
+}
     </style>
 </head>
 <body>
@@ -96,7 +126,7 @@ body::before {
     if(!$conn){
         die("Connection failed :".mysqli_connect_error());
     }
-    $sql = "SELECT * FROM donate";
+    $sql = "SELECT * FROM autoret";
     $result  = mysqli_query($conn, $sql);
 
     ?>
@@ -105,19 +135,12 @@ body::before {
     </div>
 
     <table class="table-hover">
-        <caption >Tabela e donacioneve:</caption>
+        <caption >Tabela e autoreve:</caption>
   <thead>
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Emri</th>
       <th scope="col">Mbiemri</th>
-      <th scope="col">Email</th>
-      <th scope="col">Nr. Telefoni</th>
-      <th scope="col">Titulli</th>
-      <th scope="col">Autori</th>
-      <th scope="col">Kategoria</th>
-      <th scope="col">Data e takimit</th>
-
     </tr>
   </thead>
   <?php
@@ -131,5 +154,8 @@ body::before {
   </tbody>
 </table>
 
+<div class="butonat">
+        <li><a href = "add_new_author.php">Shto autor</a></li>
+    </div>
 </body>
 </html>

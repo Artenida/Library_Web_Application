@@ -38,13 +38,17 @@ if(isset($_GET['id']))
 	<?php
 
 		$row = mysqli_fetch_array($result);
+		if(!empty($_SESSION['iLoguar']))
+                            $redirectIloguar = "cart.php?addID=" . $row['ID_Lib'];
+                        else
+                            $redirectIloguar = "login_web.php";
 		
 		print "<div class='container' style='padding-top: 4%;'><div class='row'><div class='col-md-12'><div class='titulli'>" . $row['Titulli'] . "</div>";
 		print "<div class='cover'> <img alt='" . $row['Titulli'] . "' src='images/librat/" . $row['Titulli'] . ".jpg'/></div>";
 		print "<div class='info'><b>Autori:</b>" . $row['Emri'] . " " . $row['Mbiemri'] . "<br/>";
 		print "<b>Cmimi:</b> " .$row['Cmimi'];
 		print "<br/><b>Numri i faqeve:</b> " . $row['Nr_Faqeve'] . "</div>";
-		print "<a href='Shporta.php?addID=" . $row['ID_Lib'] . "'><p class='shto'>Shto ne shporte</p></a>";
+		print "<a href='$redirectIloguar'><p class='shto'>Shto ne shporte</p></a>";
 		print "<div class='pershkrim'>" . $row['Pershkrimi'];
 		print "</div></div></div></div>";
 		$conn->close();

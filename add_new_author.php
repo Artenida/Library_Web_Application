@@ -6,20 +6,22 @@ $mesazh = "";
 require ('lidhja.php');
 
 if (isset($_POST['addBook'])) {
-    $category = $_POST['category'];
+    $name = $_POST['name'];
+    $lastname = $_POST['lastname'];
 
-    if (empty($category)) {
+    if (empty($name) || empty($lastname)) {
         $mesazh = "Ju lutem plotësoni fushat.";
     } else {
-        $checkSql = "SELECT * FROM kategorite WHERE `Kategoria` = '$category'";
+        $checkSql = "SELECT * FROM autoret WHERE `Emri` = '$name' AND 'Mbiemri' = '$lastname'";
         $checkResult = mysqli_query($conn, $checkSql);
 
         if (mysqli_num_rows($checkResult) > 0) {
-            $mesazh = "Kjo kategori ekziston!";
+            $mesazh = "Ky autor ekziston!";
 
         } else {
-            $sql = "INSERT INTO kategorite (`Kategoria`)
-                    VALUES ('$category') ";
+            $sql = "INSERT INTO autoret
+            (`Emri`, `Mbiemri`) 
+                   VALUES ('$name', '$lastname') ";
 
             $result = mysqli_query($conn, $sql);
             if ($result) {
@@ -80,12 +82,16 @@ if (isset($_POST['addBook'])) {
      <!-- <a href="admin_main_page.php"><button type="button" class="btn-close" aria-label="Close"></button></a> -->
      <div class = "nav-links"  id="navLinks">
         <a href = "admin_main_page.php">Admin</a>
-        <a href="raporti_kategorite.php">Tabela e Kategorive:</a>
+        <a href="raporti_autoret.php">Tabela e Autoreve:</a>
     </div>
 
   <div class="col-md-10">
-    <label for="validationCustom01" class="form-label">Kategoria</label>
-    <input type="text" class="form-control" id="validationCustom01" name="category" required>
+    <label for="validationCustom01" class="form-label">Emri</label>
+    <input type="text" class="form-control" id="validationCustom01" name="name" required>
+  </div>
+  <div class="col-md-10">
+    <label for="validationCustom01" class="form-label">Mbiemri</label>
+    <input type="text" class="form-control" id="validationCustom01" name="lastname" required>
   </div>
   <div class="col-12">
     <button style="background-color: rgb(11, 125, 125);

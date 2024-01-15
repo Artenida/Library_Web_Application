@@ -14,6 +14,7 @@
             $nr = mysqli_num_rows($rezultati);
             if($nr == 1){
                 $_SESSION['iLoguar'] = true;
+                $_SESSION['Id_User'] = $rresht[0];
                 $_SESSION['role'] = $rresht[1];
                 $_SESSION['username'] = $rresht[2];
                 $_SESSION['name'] = $rresht[4];

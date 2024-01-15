@@ -28,7 +28,7 @@
 	}
 
 	else {
-        $sql = "INSERT INTO donation (name,lastname,email,phone,title, author, category, date)
+        $sql = "INSERT INTO donate (name,lastname,email,phone,title, author, category, date)
         VALUES ('$name','$lastname','$email','$telefon', '$title', '$author', '$category','$date');";
         // mysqli_query($conn, $sql);
         if (!mysqli_query($conn, $sql))

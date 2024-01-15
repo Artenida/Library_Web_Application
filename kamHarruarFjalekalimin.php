@@ -1,9 +1,11 @@
 <?php
     session_start();
+    require ("lidhja.php");
+
     $mesazh = "";
+
     if(isset($_POST['send'])){
         $email = $_POST['email'];
-        require ("lidhja.php");
 
         // Check if the email exists in the database
         $check_sql = "SELECT * FROM users WHERE email = '$email'";
@@ -19,15 +21,11 @@
             }
 
             $password = mysqli_fetch_row($password_result)[0];
+            echo '<script>alert("Password retrieved from the database: ' . $password . '");
+            window.location.href = "login_web.php";</script>';
 
-            $to = $email;
-            $subject = "Your password";
-            $txt = "Your email password : $email is: $password";
-            $headers = "From: daciartenida@gmail.com";
-
-            mail($to, $subject, $txt, $headers);
-        
-            header("Location: login_web.php");
+     
+            // header("Location: login_web.php");
         } else {
             $mesazh =  "Email not found in the database";
         }
@@ -38,8 +36,49 @@
 <?php
 require_once "includes/header.php";
 require_once "includes/top-menu.php";
-
 ?>
+
+<style>
+    .nav-links ul li a ,.sign a{
+	color: #ffffff;
+	/** #ffffff ngjyra e bardhe e menuve*/
+	text-decoration: none;
+	font-size: 14px;
+}
+
+/*.sign a{
+	color: #ffffff;
+	text-decoration: none; *heq nenvizimin e link-ut*
+	font-size: 14px;
+}*/
+
+.nav-links ul li::after, .sign a::after{
+	/**kjo ben vizat e kuqe poshte menuve */
+	content: '';
+	width: 0%; /**nga 100% e beme 0% ne menyre qe vija e kuqe te jete e fshehur */
+	height: 2px;
+	background: #f44336;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+
+.nav-links ul li:hover::after, .sign a:hover::after{
+	width: 100%;
+}
+
+
+.nav-links ul li a.active::after{
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #f44336;
+	display: block;
+	margin: auto;
+}
+
+</style>
+
 <link rel="stylesheet" href="css/user.css">
     <body>
     <section class="forgot-password d-flex justify-content-center align-items-center" >

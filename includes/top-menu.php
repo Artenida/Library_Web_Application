@@ -38,9 +38,15 @@
                    
                     <div class="sign d-flex flex-row flex-lg-row
                     justify-content-center align-items-center gap-4">
-                    
-                    <a href="cart.php"><i class="fa-solid fa-cart-shopping" style="font-size: 20px;"></i></a>
-                         <?php
+
+                    <?php
+                        if(!empty($_SESSION['iLoguar']))
+                            $redirectIloguar = "cart.php";
+                        else
+                            $redirectIloguar = "login_web.php";
+
+                    print "<a href='$redirectIloguar'><i class='fa-solid fa-cart-shopping' style='font-size: 20px;'></i></a>";
+                         
                             if(!empty($_SESSION['iLoguar']))
                                 echo "<a href='signOut.php' >SIGN OUT</a>";
                             else

@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container styling */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading styling */
+h2 {
+    color: rgb(11, 125, 125);
+}
+
+/* Paragraph styling */
+p {
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Button styling */
+input[type="submit"] {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(11, 125, 125);
+    color: whitesmoke;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(208, 199, 199);
+    color: black;
+}
+
+input[type="submit"][name="cancel_delete"] {
+    background-color: whitesmoke;
+    color: #333;
+}
+
+input[type="submit"][name="cancel_delete"]:hover {
+    background-color: #bbb;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        margin: 20px;
+    }
+}
